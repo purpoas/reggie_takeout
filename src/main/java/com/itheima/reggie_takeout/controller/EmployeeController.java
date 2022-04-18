@@ -1,6 +1,7 @@
 package com.itheima.reggie_takeout.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.reggie_takeout.common.R;
 import com.itheima.reggie_takeout.entity.Employee;
@@ -43,11 +44,11 @@ public class EmployeeController {
         Employee emp = employeeService.getOne(queryWrapper);
         //用户不存在
         if (emp == null) {
-            return R.error("登陆失败");
+            return R.error("用户名不存在");
         }
         //密码比对，若不一致则返回登陆失败
         if (!emp.getPassword().equals(password)) {
-            return R.error("登陆失败");
+            return R.error("用户名或密码错误");
         }
         //员工状态校验
         if (emp.getStatus() == 0) {
@@ -96,8 +97,8 @@ public class EmployeeController {
 
 
     @GetMapping(value = "/page")
-    public R<Page<Employee>> page(int page, int pageSize, String name) {
-        Page<Employee> iPage = new Page<>(page, pageSize);
+    public R<IPage<Employee>> page(int page, int pageSize, String name) {
+        IPage<Employee> iPage = new Page<>(page, pageSize);
 
         LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(StringUtils.hasLength(name), Employee::getName, name);
