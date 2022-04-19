@@ -22,9 +22,9 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public R<String> exceptionHandler(SQLIntegrityConstraintViolationException e) {
         if (e.getMessage().contains("Duplicate entry")) {
-            String[] s = e.getMessage().split(" ");
-            String username = s[2];
-            return R.error("账号" + username + "已存在");
+            String[] split = e.getMessage().split(" ");
+            String msg = split[2] + "已存在";
+            return R.error(msg);
         }
         return R.error("未知错误");
     }

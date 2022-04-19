@@ -80,7 +80,7 @@ public class EmployeeController {
      */
     @PostMapping
     @Qualifier(value = "add")
-    public R<String> add(HttpServletRequest request, @RequestBody Employee employee) {
+    public R<String> add(@RequestBody Employee employee) {
 
         //密码默认为123456
         employee.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
@@ -100,13 +100,12 @@ public class EmployeeController {
         queryWrapper.like(StringUtils.hasLength(name), Employee::getName, name);
         queryWrapper.orderByDesc(Employee::getUpdateTime);
 
-        employeeService.page(iPage, queryWrapper);
-        return R.success(iPage);
+        return R.success(employeeService.page(iPage, queryWrapper));
     }
 
     @PutMapping
     @Qualifier(value = "update")
-    public R<String> update(HttpServletRequest request, @RequestBody Employee employee) {
+    public R<String> update(@RequestBody Employee employee) {
 
         employeeService.updateById(employee);
 
