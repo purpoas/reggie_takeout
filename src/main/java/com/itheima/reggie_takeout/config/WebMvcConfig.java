@@ -1,6 +1,6 @@
 package com.itheima.reggie_takeout.config;
 
-import com.itheima.reggie_takeout.common.JacksonObjectMapper;
+import com.itheima.reggie_takeout.utils.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;

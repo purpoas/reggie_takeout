@@ -1,4 +1,4 @@
-package com.itheima.reggie_takeout.common;
+package com.itheima.reggie_takeout.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
