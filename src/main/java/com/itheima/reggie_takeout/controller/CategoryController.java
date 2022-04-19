@@ -52,10 +52,14 @@ public class CategoryController {
 
     @DeleteMapping
     public R<String> delete(Long id) {
-
-        categoryService.removeById(id);
-
+        categoryService.remove(id);
         return R.success("删除分类信息成功");
+    }
+
+    @PutMapping
+    public R<String> update(@RequestBody Category category) {
+        categoryService.updateById(category);
+        return R.success("修改分类信息成功");
     }
 
 }

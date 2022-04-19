@@ -9,5 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2022/4/19 11:36
  */
 @Mapper
-public interface SetMealMapper extends BaseMapper<Setmeal> {
+public interface SetmealMapper extends BaseMapper<Setmeal> {
 }

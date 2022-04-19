@@ -8,4 +8,5 @@ import com.itheima.reggie_takeout.entity.Category;
  * @date 2022/4/19 10:03
  */
 public interface CategoryService extends IService<Category> {
+    public void remove(Long id);
 }

@@ -7,5 +7,5 @@ import com.itheima.reggie_takeout.entity.Setmeal;
  * @author purpoas
  * @date 2022/4/19 11:36
  */
-public interface SetMealService extends IService<Setmeal> {
+public interface SetmealService extends IService<Setmeal> {
 }
