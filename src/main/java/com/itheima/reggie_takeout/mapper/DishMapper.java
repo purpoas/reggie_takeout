@@ -1,7 +1,7 @@
 package com.itheima.reggie_takeout.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.itheima.reggie_takeout.entity.Dish;
+import com.itheima.reggie_takeout.dao.entity.Dish;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

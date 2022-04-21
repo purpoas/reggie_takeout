@@ -3,7 +3,7 @@ package com.itheima.reggie_takeout.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.itheima.reggie_takeout.entity.Employee;
+import com.itheima.reggie_takeout.dao.entity.Employee;
 import com.itheima.reggie_takeout.service.EmployeeService;
 import com.itheima.reggie_takeout.utils.R;
 import lombok.extern.slf4j.Slf4j;
