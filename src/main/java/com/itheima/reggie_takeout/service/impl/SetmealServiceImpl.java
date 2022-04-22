@@ -11,6 +11,7 @@ import com.itheima.reggie_takeout.service.SetmealService;
 import com.itheima.reggie_takeout.utils.CustomException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,6 +45,7 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
         setmealDishService.saveBatch(setMealDishes);
     }
 
+    @Transactional
     @Override
     public void removeWithDish (List<Long> ids) {
         //查询套餐状态，是否可以删除
