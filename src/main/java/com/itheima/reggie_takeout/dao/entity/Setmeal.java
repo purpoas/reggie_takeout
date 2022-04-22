@@ -15,6 +15,7 @@ public class Setmeal implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    //套餐id
     private Long id;
 
 
